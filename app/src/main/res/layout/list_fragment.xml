@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="?attr/actionBarTheme">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/search_main_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/toolbarText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/ib_search"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/search"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/ib_search"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="fitCenter"
+                        android:background="@null"
+                        android:src="@drawable/ic_search" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/search_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/ib_close_search_container"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_navigate_before_black_24dp"
+                        android:tint="@android:color/white" />
+
+                    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        card_view:cardCornerRadius="22dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="2dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginRight="15dp"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true">
+
+                                <SearchView
+                                    android:id="@+id/sv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="@android:color/transparent"
+                                    android:completionThreshold="1"
+                                    android:queryHint="@string/search"
+                                    android:maxLines="1"
+                                    android:queryBackground="@android:color/transparent"
+                                    />
+
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                android:id="@+id/recycler_repositories"
+                layout="@layout/recycler_repositories" />
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </LinearLayout>
+
+</layout>

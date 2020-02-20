@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="?attr/actionBarTheme">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp">
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    tools:text = "Repository name"/>
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout
+            android:id="@+id/containerPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="23sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:text="Name of the repository"/>
+            <TextView
+                android:id="@+id/tv_repository_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                tools:text="Name SDk"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="23sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:text="Watchers count"/>
+            <TextView
+                android:id="@+id/tv_watchers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                tools:text="100"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

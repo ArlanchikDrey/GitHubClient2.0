@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="repository"
+            type="com.arlanov.androidapp.model.models.RepositoryModelWrapper"></variable>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/item_list_image"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginBottom="2dp"
+            android:scaleType="fitXY"
+            app:image_url = "@{repository.avatar_url}"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/item_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/item_list_image"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/item_list_image"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{repository.name}"
+            tools:text = "Name"
+            android:textColor="#2B2B2B"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/item_list_count_forks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_list_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/item_list_image"
+            android:alpha="0.5"
+            android:text='@{String.valueOf(repository.forks_count) + " " + "forks"}'
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_list_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_list_count_forks"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@+id/item_list_image"
+            android:text="@{repository.description}"
+            tools:text = "Description"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+</layout>
